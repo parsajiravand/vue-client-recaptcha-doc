@@ -87,6 +87,4 @@ export default {
   justify-content: center;
   margin: 10px auto;
 }
-.sample-captcha .captcha-box .vue_client_recaptcha {
-}
 </style>
