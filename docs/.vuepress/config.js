@@ -30,7 +30,7 @@ export default {
           },
           {
             text: "Docs",
-            link: "https://github.com/parsajiravand/vue-client-recaptcha/docs",
+            link: "https://github.com/parsajiravand/vue-client-recaptcha-doc",
           },
         ],
       },

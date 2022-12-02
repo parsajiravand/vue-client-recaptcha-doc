@@ -31,7 +31,7 @@ footer: MIT Licensed | Copyright © 2022-present Parsa Jiravand
 
 ```bash
 # install in your project
-yarn add vue3-form-wizard
+yarn add vue-client-recaptcha
 
 ```
 
@@ -41,7 +41,7 @@ yarn add vue3-form-wizard
   
 ```bash
 # install in your project
-npm install vue3-form-wizard
+npm install vue-client-recaptcha
 
 ```
 
