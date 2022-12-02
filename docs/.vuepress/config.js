@@ -2,6 +2,7 @@
 import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
 import { path } from "@vuepress/utils";
 import { defaultTheme } from "vuepress";
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 export default {
   theme: defaultTheme({
     locales: {
@@ -79,6 +80,10 @@ export default {
     registerComponentsPlugin({
 
       componentsDir: path.resolve(__dirname, "./components"),
+    }),
+    mediumZoomPlugin({
+      // options
+      selector:':not(a) > s'
     }),
   ],
 };
