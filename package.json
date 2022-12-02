@@ -2,7 +2,7 @@
   "name": "vue-client-recaptcha-docs",
   "private": false,
   "author": "parsa jiravand",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "docs for vue-client-recaptcha .",
   "scripts": {
     "docs:dev": "vuepress dev docs",

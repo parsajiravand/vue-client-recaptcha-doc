@@ -1,6 +1,6 @@
-# Playground
+# Demos
 
-## Starter :new:
+## Starter
 &nbsp;
 <demos-start />
 &nbsp;
