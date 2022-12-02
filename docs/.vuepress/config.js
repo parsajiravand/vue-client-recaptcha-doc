@@ -8,9 +8,9 @@ export default {
     locales: {
       "/": {
         lang: "en-US",
-        title: "Vue3 Form Wizard",
+        title: "Vue Client Recaptcha",
         description:
-          "Vue3-form-wizard is a vue based component with no external depenendcies which simplifies tab wizard management.",
+          "Build simple recaptcha for vuejs without need server .",
       },
     },
     logo: "https://vuejs.org/images/logo.png",
@@ -26,18 +26,18 @@ export default {
         children: [
           {
             text: "Package",
-            link: "https://github.com/parsajiravand/vue-client-recatpcha",
+            link: "https://github.com/parsajiravand/vue-client-recaptcha",
           },
           {
             text: "Docs",
-            link: "https://github.com/parsajiravand/vue-client-recatpcha/docs",
+            link: "https://github.com/parsajiravand/vue-client-recaptcha/docs",
           },
         ],
       },
        // NavbarItem
       {
         text: "Npm",
-        link: "https://www.npmjs.com/package/vue-client-recatpcha",
+        link: "https://www.npmjs.com/package/vue-client-recaptcha",
       },
     ],
     sidebar: [
