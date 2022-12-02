@@ -344,53 +344,60 @@ export default {
     </section>
 
     <section class="captcha-box">
-      <!-- Hide CapitalCase And Number And Set Custom Carachters -->
-      <!-- Set 10 Charachter -->
+      <!-- create list for carachters and select random color for each item -->
       <VueClientRecaptcha
         :value="inputValue"
-        chars="!@#$%^&*"
-        :count="10"
+        :textColors="[
+          'blue',
+          'red',
+          'purple',
+          'green',
+          '#e83e8c',
+          '#ff5578',
+          '#53b29f',
+          '#d64a37',
+          '#094899',
+          '#f64141',
+          'rgb(77,190,255)',
+        ]"
         @getCode="getCaptchaCode"
         @isValid="checkValidCaptcha"
       />
     </section>
   </div>
 </template>
-<script>
-import { ref, reactive } from "@vue/reactivity";
+<script lang="ts">
+import { defineComponent } from "vue";
 import VueClientRecaptcha from "vue-client-recaptcha";
 import "vue-client-recaptcha/dist/style.css";
-export default {
+export default defineComponent({
   components: {
     VueClientRecaptcha,
   },
-  setup() {
-    /* pass value to captcha  */
-    const inputValue = ref(null);
 
-    const data = reactive({
-      captchaCode: null,
-      isValid: false,
-    });
-    const getCaptchaCode = (value) => {
-      /* you can access captcha code */
-      data.captchaCode = value;
+  data() {
+    return {
+      inputValue: null,
+      data: {
+        captchaCode: null,
+        isValid: false,
+      },
     };
-    const checkValidCaptcha = (value) => {
+  },
+  methods: {
+    getCaptchaCode(value: string) {
+      /* you can access captcha code */
+      this.data.captchaCode = value;
+    },
+    checkValidCaptcha(value: string) {
       /* expected return boolean if your value and captcha code are same return True otherwise return False */
-      data.isValid = value;
+      this.data.isValid = value;
       if (value) {
         alert("Your Captcha is valid now you can submit");
       }
-    };
-    return {
-      inputValue,
-      data,
-      getCaptchaCode,
-      checkValidCaptcha,
-    };
+    },
   },
-};
+});
 </script>
 <style>
 .sample-captcha {
@@ -423,6 +430,7 @@ export default {
   margin: 10px auto;
 }
 </style>
+
 
 ```
 :::
