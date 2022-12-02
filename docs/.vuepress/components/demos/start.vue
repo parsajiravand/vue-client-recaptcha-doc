@@ -1,13 +1,3 @@
-# Playground
-
-## Starter :new:
-&nbsp;
-<demos-start />
-&nbsp;
-
-::: details View Source 💻
-  
-```html
 <template>
   <div class="sample-captcha">
     <section class="data-box">
@@ -34,7 +24,6 @@
 <script>
 import { ref, reactive } from "@vue/reactivity";
 import VueClientRecaptcha from "vue-client-recaptcha";
-import "vue-client-recaptcha/dist/style.css";
 export default {
   components: {
     VueClientRecaptcha,
@@ -68,6 +57,7 @@ export default {
 };
 </script>
 <style>
+@import url("https://unpkg.com/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;
@@ -100,11 +90,3 @@ export default {
 .sample-captcha .captcha-box .vue_client_recaptcha {
 }
 </style>
-
-```
-:::
-
-&nbsp;&nbsp;
-## Square steps
-
-&nbsp;

@@ -1,8 +1,4 @@
-## Slots
-* **Default** - Used for tab-contents
-* **title** - Upper title section including sub-title
-* **prev** - Previous button content (no need to worry about handling the button functionality)
-* **next** - Next button content
-* **finish** - Finish button content
-* **custom-buttons-left** - Appears on right of "Back" button
-* **custom-buttons-right** - Appears on the left of "Next/Finish" button
+
+| Name    | Description |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `icon`  | can set your custom template for icon  or changed to text (default icon is 'refresh' from fontawsome also you can change it with props  |   
