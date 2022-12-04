@@ -34,7 +34,6 @@
 <script>
 import { ref, reactive } from "@vue/reactivity";
 import VueClientRecaptcha from "vue-client-recaptcha";
-import "vue-client-recaptcha/dist/style.css";
 export default {
   components: {
     VueClientRecaptcha,
@@ -68,6 +67,7 @@ export default {
 };
 </script>
 <style>
+@import url("/node_modules/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;
@@ -147,7 +147,6 @@ export default {
 <script>
 import { ref, reactive } from "@vue/reactivity";
 import VueClientRecaptcha from "vue-client-recaptcha";
-import "vue-client-recaptcha/dist/style.css";
 export default {
   components: {
     VueClientRecaptcha,
@@ -181,6 +180,7 @@ export default {
 };
 </script>
 <style>
+@import url("/node_modules/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;
@@ -253,7 +253,6 @@ export default {
 <script>
 import { ref, reactive } from "@vue/reactivity";
 import VueClientRecaptcha from "vue-client-recaptcha";
-import "vue-client-recaptcha/dist/style.css";
 export default {
   components: {
     VueClientRecaptcha,
@@ -287,6 +286,7 @@ export default {
 };
 </script>
 <style>
+@import url("/node_modules/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;
@@ -369,7 +369,6 @@ export default {
 <script lang="ts">
 import { defineComponent } from "vue";
 import VueClientRecaptcha from "vue-client-recaptcha";
-import "vue-client-recaptcha/dist/style.css";
 export default defineComponent({
   components: {
     VueClientRecaptcha,
@@ -400,6 +399,7 @@ export default defineComponent({
 });
 </script>
 <style>
+@import url("/node_modules/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;

@@ -57,7 +57,6 @@ export default {
 <script>
 import { ref } from "vue";
 import VueClientRecaptcha from "vue-client-recaptcha";
-import "vue-client-recaptcha/dist/style.css";
 export default {
   components: {
     VueClientRecaptcha,
@@ -82,6 +81,9 @@ export default {
   },
 };
 </script>
+<style>
+@import url("/node_modules/vue-client-recaptcha/dist/style.css");
+</style>
 ```
 ## Compatibility
 
