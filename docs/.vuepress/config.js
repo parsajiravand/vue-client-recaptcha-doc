@@ -13,7 +13,7 @@ export default {
           "Build simple recaptcha for vuejs without need server .",
       },
     },
-    logo: "https://vuejs.org/images/logo.png",
+    logo: "https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png",
     navbar: [
       // NavbarItem
       {
@@ -85,5 +85,57 @@ export default {
       // options
       selector:':not(a) > s'
     }),
+  ],
+  head: [
+    [
+      "link",
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "mask-icon",
+        href: "https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png",
+        color: "#3a0839",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "shortcut icon",
+        href: "https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png",
+      },
+    ],
+    ["meta", { name: "msapplication-TileColor", content: "#3a0839" }],
+    [
+      "meta",
+      {
+        name: "msapplication-config",
+        content: "/assets/favicons/browserconfig.xml",
+      },
+    ],
+    ["meta", { name: "theme-color", content: "#ffffff" }],
   ],
 };

@@ -1,7 +1,7 @@
 ---
 home: true
 title: Vue Client Recaptcha | Home
-heroImage: https://vuejs.org/images/logo.png
+heroImage: https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png
 heroText: Vue Client Recaptcha
 tagline: Vue Client Recaptcha Build simple recaptcha for vuejs without need server.
 actions:
