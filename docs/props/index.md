@@ -10,5 +10,5 @@
 | width  | Width of captcha | `any`  | `count * 30`|
 | height  | Width of captcha | `number`  | `50`|
 | canvasClass  |  custom class for canvas | `string`  | ``|
-| captchaFont <small>(V1.1.2)</small>  | Custom canvas font    | `string`  | `bold 28px sans-serif`|
+| captchaFont <small>(V1.1.3)</small>  | Custom canvas font    | `string`  | `bold 28px sans-serif`|
                                                                            
