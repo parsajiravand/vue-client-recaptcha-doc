@@ -11,4 +11,5 @@
 | height  | Width of captcha | `number`  | `50`|
 | canvasClass  |  custom class for canvas | `string`  | ``|
 | captchaFont <small>(V1.1.3)</small>  | Custom canvas font    | `string`  | `bold 28px sans-serif`|
+| hideRefreshIcon <small>(V1.1.5)</small>  | Custom canvas font    | `boolean`  | `hide or show refresh button action`|
                                                                            
