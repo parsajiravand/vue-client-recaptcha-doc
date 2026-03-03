@@ -1,0 +1,19 @@
+/* v2 tag for vue-client-recaptcha docs */
+.vcr-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 12px;
+  margin-left: 6px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+.vcr-tag--v2 {
+  background: #3eaf7c;
+  color: #fff;
+  border-color: #3eaf7c;
+}

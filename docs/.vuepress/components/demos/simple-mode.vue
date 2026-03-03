@@ -11,14 +11,13 @@
       <pre class="data">{{ data }}</pre>
     </section>
 
-    <!-- Hide Letters And Show NumbersOnly Without Lines -->
-    <!-- Can Set Your Custom Icon Or Text With Slot -->
+    <!-- Numeric preset, no distortion, custom icon slot -->
     <section class="captcha-box">
       <VueClientRecaptcha
-        :value="inputValue"
+        v-model="inputValue"
         :count="4"
-        chars="12345"
-        :hideLines="true"
+        chars-preset="numeric"
+        distortion="none"
         custom-text-color="black"
         @getCode="getCaptchaCode"
         @isValid="checkValidCaptcha"
@@ -31,7 +30,7 @@
   </div>
 </template>
 <script>
-import { ref, reactive } from "@vue/reactivity";
+import { ref, reactive } from "vue";
 import VueClientRecaptcha from "vue-client-recaptcha";
 export default {
   components: {

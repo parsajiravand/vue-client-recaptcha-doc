@@ -1,37 +1,74 @@
-Build simple recaptcha for vuejs without need server
-
-vue-client-recaptcha is a vue based component with **no external depenendcies** which simplifies tab wizard management and allows you to focus on the functional part of your app rather than
-wasting time on details. Just forget about id's, external scripts and jQuery dependencies
-
-
 # Usage
 
-## NPM
-`npm install vue-client-recaptcha --save`
-## YARN
-`yarn add vue-client-recaptcha`
+vue-client-recaptcha is a Vue 3 component with **no external dependencies** that provides client-side captcha generation and validation. Focus on your app logic without dealing with external scripts or server-side captcha APIs.
 
-## Direct script include
-Download the css and js files from `dist` folder or reference them directly from github (check jsfiddle links)
-```html
-<link rel="stylesheet" href="https://unpkg.com/vue-client-recaptcha/dist/style.css">
-<script src="https://unpkg.com/vue-client-recaptcha"></script>
+## Dependencies
+
+- **Required:** Vue.js >= 3.2 (peer dependency)
+
+## Installation
+
+### NPM
+
+```bash
+npm install vue-client-recaptcha --save
 ```
-## Global registration
+
+### YARN
+
+```bash
+yarn add vue-client-recaptcha
+```
+
+## Basic Usage
+
+```vue
+<script setup>
+import { ref } from 'vue';
+import { VueClientRecaptcha } from 'vue-client-recaptcha';
+
+const inputValue = ref('');
+const isValid = ref(false);
+const captchaRef = ref(null);
+
+const getCaptchaCode = (code) => console.log('Code:', code);
+const checkValidCaptcha = (valid) => console.log('Valid:', valid);
+</script>
+
+<template>
+  <div>
+    <input v-model="inputValue" placeholder="Enter captcha" />
+    <VueClientRecaptcha
+      ref="captchaRef"
+      v-model="inputValue"
+      v-model:valid="isValid"
+      @getCode="getCaptchaCode"
+      @isValid="checkValidCaptcha"
+    />
+    <button @click="captchaRef?.resetCaptcha()">Reset</button>
+  </div>
+</template>
+```
+
+## v-model
+
+- **`v-model`** – Binds user input for validation
+- **`v-model:valid`** <span class="vcr-tag vcr-tag--v2">v2</span> – Binds validation state (boolean)
+
+## Global Registration
+
 ```js
 import { createApp } from 'vue'
 import VueClientRecaptcha from 'vue-client-recaptcha'
 
-const app= createApp(App)
-app.component("VueClientRecaptcha", VueClientRecaptcha);  
+const app = createApp(App)
+app.component('VueClientRecaptcha', VueClientRecaptcha)
 ```
 
-## Component registration
-```js
-import VueClientRecaptcha from 'vue-client-recaptcha'
+## Component Registration
 
-<!--Optional style.css-->
-import 'vue-client-recaptcha/dist/style.css';
+```js
+import { VueClientRecaptcha } from 'vue-client-recaptcha'
 
 export default {
   components: {
@@ -39,15 +76,16 @@ export default {
   },
 }
 ```
-## Template usage
 
-```html
+## Options API Example
+
+```vue
 <template>
-  <div class="sample-captcha">
-    <input type="text" v-model="inputValue" />
-
+  <div>
+    <input v-model="inputValue" placeholder="Enter captcha" />
     <VueClientRecaptcha
-      :value="inputValue"
+      :model-value="inputValue"
+      @update:model-value="inputValue = $event"
       @getCode="getCaptchaCode"
       @isValid="checkValidCaptcha"
     />
@@ -55,36 +93,29 @@ export default {
 </template>
 
 <script>
-import { ref } from "vue";
-import VueClientRecaptcha from "vue-client-recaptcha";
-export default {
-  components: {
-    VueClientRecaptcha,
-  },
-  setup() {
-    /* pass value to captcha  */
-    const inputValue = ref(null);
+import VueClientRecaptcha from 'vue-client-recaptcha'
 
-    const getCaptchaCode = (value) => {
-      /* you can access captcha code */
-      console.log(value);
-    };
-    const checkValidCaptcha = (value) => {
-      /* expected return boolean if your value and captcha code are same return True otherwise return False */
-      console.log(value);
-    };
-    return {
-      inputValue,
-      getCaptchaCode,
-      checkValidCaptcha,
-    };
+export default {
+  components: { VueClientRecaptcha },
+  data() {
+    return { inputValue: '' }
   },
-};
+  methods: {
+    getCaptchaCode(code) {
+      console.log('Code:', code)
+    },
+    checkValidCaptcha(valid) {
+      console.log('Valid:', valid)
+    },
+  },
+}
 </script>
-<style>
-@import url("/node_modules/vue-client-recaptcha/dist/style.css");
-</style>
 ```
+
 ## Compatibility
 
-vue-client-recaptcha works with Vue > 3.x
+vue-client-recaptcha works with **Vue 3.2+**.
+
+## Security Note
+
+This is a **client-side captcha**. It provides light protection against casual bots but is not a substitute for server-side validation. Do not rely on it for high-security use cases. Use reCAPTCHA or similar server-verified solutions for strong protection.

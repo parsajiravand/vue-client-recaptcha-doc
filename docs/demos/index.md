@@ -23,7 +23,7 @@
 
     <section class="captcha-box">
       <VueClientRecaptcha
-        :value="inputValue"
+        v-model="inputValue"
         @getCode="getCaptchaCode"
         @isValid="checkValidCaptcha"
       />
@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import { ref, reactive } from "@vue/reactivity";
-import VueClientRecaptcha from "vue-client-recaptcha";
+import { ref, reactive } from "vue";
+import { VueClientRecaptcha } from "vue-client-recaptcha";
 export default {
   components: {
     VueClientRecaptcha,
@@ -67,7 +67,7 @@ export default {
 };
 </script>
 <style>
-@import url("/node_modules/vue-client-recaptcha/dist/style.css");
+@import url("https://unpkg.com/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;
@@ -103,7 +103,7 @@ export default {
 :::
 
 &nbsp;&nbsp;
-## Simple Mode With Custom Icon
+## Simple Mode With Custom Icon <span class="vcr-tag vcr-tag--v2">v2</span>
 
 &nbsp;
 <demos-simple-mode />
@@ -125,14 +125,13 @@ export default {
       <pre class="data">{{ data }}</pre>
     </section>
 
-    <!-- Hide Letters And Show NumbersOnly Without Lines -->
-    <!-- Can Set Your Custom Icon Or Text With Slot -->
+    <!-- Numeric preset, no distortion, custom icon slot -->
     <section class="captcha-box">
       <VueClientRecaptcha
-        :value="inputValue"
+        v-model="inputValue"
         :count="4"
-        chars="12345"
-        :hideLines="true"
+        chars-preset="numeric"
+        distortion="none"
         custom-text-color="black"
         @getCode="getCaptchaCode"
         @isValid="checkValidCaptcha"
@@ -145,8 +144,8 @@ export default {
   </div>
 </template>
 <script>
-import { ref, reactive } from "@vue/reactivity";
-import VueClientRecaptcha from "vue-client-recaptcha";
+import { ref, reactive } from "vue";
+import { VueClientRecaptcha } from "vue-client-recaptcha";
 export default {
   components: {
     VueClientRecaptcha,
@@ -180,7 +179,7 @@ export default {
 };
 </script>
 <style>
-@import url("/node_modules/vue-client-recaptcha/dist/style.css");
+@import url("https://unpkg.com/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;
@@ -238,10 +237,10 @@ export default {
     </section>
 
     <section class="captcha-box">
-      <!-- Hide CapitalCase And Number And Set Custom Carachters -->
-      <!-- Set 10 Charachter -->
+      <!-- Custom character preset, 10 characters -->
       <VueClientRecaptcha
-        :value="inputValue"
+        v-model="inputValue"
+        chars-preset="custom"
         chars="!@#$%^&*"
         :count="10"
         @getCode="getCaptchaCode"
@@ -251,8 +250,8 @@ export default {
   </div>
 </template>
 <script>
-import { ref, reactive } from "@vue/reactivity";
-import VueClientRecaptcha from "vue-client-recaptcha";
+import { ref, reactive } from "vue";
+import { VueClientRecaptcha } from "vue-client-recaptcha";
 export default {
   components: {
     VueClientRecaptcha,
@@ -286,7 +285,7 @@ export default {
 };
 </script>
 <style>
-@import url("/node_modules/vue-client-recaptcha/dist/style.css");
+@import url("https://unpkg.com/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;
@@ -344,10 +343,10 @@ export default {
     </section>
 
     <section class="captcha-box">
-      <!-- create list for carachters and select random color for each item -->
+      <!-- Random text colors from list -->
       <VueClientRecaptcha
-        :value="inputValue"
-        :textColors="[
+        v-model="inputValue"
+        :text-colors="[
           'blue',
           'red',
           'purple',
@@ -368,7 +367,7 @@ export default {
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import VueClientRecaptcha from "vue-client-recaptcha";
+import { VueClientRecaptcha } from "vue-client-recaptcha";
 export default defineComponent({
   components: {
     VueClientRecaptcha,
@@ -399,7 +398,7 @@ export default defineComponent({
 });
 </script>
 <style>
-@import url("/node_modules/vue-client-recaptcha/dist/style.css");
+@import url("https://unpkg.com/vue-client-recaptcha/dist/style.css");
 .sample-captcha {
   display: flex;
   flex-direction: row;

@@ -15,10 +15,17 @@ export default {
     },
     logo: "https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png",
     navbar: [
-      // NavbarItem
       {
         text: "Docs",
         link: "/usage/",
+      },
+      {
+        text: "Migration",
+        link: "/migration.html",
+      },
+      {
+        text: "Changelog",
+        link: "/changelog.html",
       },
       // NavbarGroup
       {
@@ -62,38 +69,21 @@ export default {
       },
     ],
     sidebar: [
-      // NavbarItem
+      { text: "Usage", link: "/usage/" },
+      { text: "Props", link: "/props/" },
+      { text: "Events", link: "/events/" },
+      { text: "Slots", link: "/slots/" },
+      { text: "Methods", link: "/methods/" },
+      { text: "Composable", link: "/composable/" },
+      { text: "Demos", link: "/demos/" },
+      { text: "Playground", link: "/playground/" },
       {
-        text: "Usage",
-        link: "/usage/",
+        text: "Migration (v1 → v2)",
+        link: "/migration.html",
       },
       {
-        text: "Props",
-        link: "/props/",
-      },
-      {
-        text: "Events",
-        link: "/events/",
-      },
-      {
-        text: "Slots",
-        link: "/slots/",
-      },
-      // {
-      //   text: "Methods",
-      //   link: "/methods/",
-      // },
-      // {
-      //   text: "Scoped slots",
-      //   link: "/scoped-slots/",
-      // },
-      {
-        text: "Demos",
-        link: "/demos/",
-      },
-      {
-        text: "Playground",
-        link: "/playground/",
+        text: "Changelog",
+        link: "/changelog.html",
       },
     ],
   }),

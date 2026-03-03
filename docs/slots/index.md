@@ -1,4 +1,15 @@
+# Slots
 
-| Name    | Description |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`  | can set your custom template for icon  or changed to text (default icon is 'refresh' from fontawsome also you can change it with props  |   
+| Name | Description |
+|------|-------------|
+| `icon` | Custom template for the refresh icon. Use text or any custom element. Default is the built-in refresh SVG. |
+
+## Example
+
+```vue
+<VueClientRecaptcha v-model="inputValue">
+  <template #icon>
+    <span style="color: blue">Refresh</span>
+  </template>
+</VueClientRecaptcha>
+```

@@ -14,8 +14,8 @@
     <section class="captcha-box">
       <!-- create list for carachters and select random color for each item -->
       <VueClientRecaptcha
-        :value="inputValue"
-        :textColors="[
+        v-model="inputValue"
+        :text-colors="[
           'blue',
           'red',
           'purple',

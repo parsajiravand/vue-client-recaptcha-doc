@@ -3,7 +3,7 @@
     <section class="data-box">
       <input
         v-model="inputValue"
-        placeholder="submit your captcha"
+        placeholder="Enter captcha"
         class="input"
         type="text"
       />
@@ -13,7 +13,7 @@
 
     <section class="captcha-box">
       <VueClientRecaptcha
-        :value="inputValue"
+        v-model="inputValue"
         @getCode="getCaptchaCode"
         @isValid="checkValidCaptcha"
       />
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { ref, reactive } from "@vue/reactivity";
+import { ref, reactive } from "vue";
 import VueClientRecaptcha from "vue-client-recaptcha";
 export default {
   components: {

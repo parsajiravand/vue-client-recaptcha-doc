@@ -15,7 +15,8 @@
       <!-- Hide CapitalCase And Number And Set Custom Carachters -->
       <!-- Set 10 Charachter -->
       <VueClientRecaptcha
-        :value="inputValue"
+        v-model="inputValue"
+        chars-preset="custom"
         chars="!@#$%^&*"
         :count="10"
         @getCode="getCaptchaCode"
@@ -25,7 +26,7 @@
   </div>
 </template>
 <script>
-import { ref, reactive } from "@vue/reactivity";
+import { ref, reactive } from "vue";
 import VueClientRecaptcha from "vue-client-recaptcha";
 export default {
   components: {

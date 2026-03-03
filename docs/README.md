@@ -3,36 +3,41 @@ home: true
 title: Vue Client Recaptcha | Home
 heroImage: https://i.postimg.cc/CM6ZjS2F/vue-client-recaptcha.png
 heroText: Vue Client Recaptcha
-tagline: Vue Client Recaptcha Build simple recaptcha for vuejs without need server.
+tagline: Build simple recaptcha for Vue.js without need for a server.
 actions:
   - text: Get Started
     link: /usage/
     type: primary
+  - text: Migration (v1 → v2)
+    link: /migration/
+    type: secondary
 features:
   - title: Simplicity First
-    details: Minimal setup with markdown-centered project structure helps you focus on writing.
-  - title: Vue-Powered
-    details: Enjoy the dev experience of Vue, use Vue components in markdown, and develop custom themes with Vue.
-  - title: Performant
-    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-  - title: Themes
-    details: Providing a default theme out of the box. You can also choose a community theme or create your own one.
-  - title: Plugins
-    details: Flexible plugin API, allowing plugins to provide lots of plug-and-play features for your site.
-  - title: Bundlers
-    details: Default bundler is Vite, while Webpack is also supported. Choose the one you like!
+    details: Minimal setup with v-model support. No external scripts or server required.
+  - title: Vue 3
+    details: Built for Vue 3.2+ with Composition API, v-model, and useCaptcha composable.
+  - title: Highly Customizable
+    details: Themes (light/dark/auto), distortion types, character presets, and CSS variables.
+  - title: Accessible
+    details: A11y labels, optional audio for screen readers, and proper ARIA attributes.
+  - title: Composable
+    details: useCaptcha composable for custom UIs or headless usage.
+  - title: Zero Dependencies
+    details: Only Vue as a peer dependency. No external runtime deps.
 footer: MIT Licensed | Copyright © 2022-present Parsa Jiravand
 ---
 
-### As Easy as 1, 2, 3
+## Dependencies
+
+- **Required:** Vue.js >= 3.2 (peer dependency)
+
+## Installation
 
 <CodeGroup>
   <CodeGroupItem title="YARN" active>
 
 ```bash
-# install in your project
 yarn add vue-client-recaptcha
-
 ```
 
   </CodeGroupItem>
@@ -40,11 +45,31 @@ yarn add vue-client-recaptcha
   <CodeGroupItem title="NPM">
   
 ```bash
-# install in your project
 npm install vue-client-recaptcha
-
 ```
 
   </CodeGroupItem>
 </CodeGroup>
+
+## Quick Example
+
+```vue
+<script setup>
+import { ref } from 'vue';
+import { VueClientRecaptcha } from 'vue-client-recaptcha';
+
+const inputValue = ref('');
+const isValid = ref(false);
+const captchaRef = ref(null);
+</script>
+
+<template>
+  <input v-model="inputValue" placeholder="Enter captcha" />
+  <VueClientRecaptcha
+    ref="captchaRef"
+    v-model="inputValue"
+    v-model:valid="isValid"
+  />
+  <button @click="captchaRef?.resetCaptcha()">Reset</button>
+</template>
 ```
