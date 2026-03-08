@@ -23,6 +23,7 @@
 | `noiseDots` <span class="vcr-tag vcr-tag--v2">v2</span> | `number` | `0` | Number of noise dots (0 = off) |
 | `noiseLines` <span class="vcr-tag vcr-tag--v2">v2</span> | `number` | `-1` | Distortion lines (-1 = use `count`) |
 | `audioEnabled` <span class="vcr-tag vcr-tag--v2">v2</span> | `boolean` | `false` | Speak code for screen readers |
+| `simpleMode` <span class="vcr-tag vcr-tag--v2">v2</span> | `boolean` | `false` | Clean, straight-line captcha with theme-aware single color |
 | `icon` | `string` | `"refresh"` | Icon type (use slot for custom icon) |
 
 ::: tip modelValue vs value
