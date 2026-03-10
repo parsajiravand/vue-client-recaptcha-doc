@@ -5,6 +5,9 @@ hero:
   name: Vue Client Recaptcha
   text: Simple captcha for Vue.js
   tagline: Build client-side captcha without server. Lightweight, customizable, accessible.
+  image:
+    src: /logo.png
+    alt: Vue Client Recaptcha
   actions:
     - theme: brand
       text: Get Started

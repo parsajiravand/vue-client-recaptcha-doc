@@ -4,7 +4,12 @@ export default defineConfig({
   title: "Vue Client Recaptcha",
   description: "Build simple recaptcha for Vue.js without need for server",
   base: "/",
+  head: [
+    ["link", { rel: "icon", type: "image/png", href: "/logo.png" }],
+    ["link", { rel: "apple-touch-icon", sizes: "180x180", href: "/logo.png" }],
+  ],
   themeConfig: {
+    logo: "/logo.png",
     nav: [
       { text: "Guide", link: "/guide/getting-started" },
       { text: "Component", link: "/component/vue-client-recaptcha" },
