@@ -40,6 +40,7 @@ function checkComposable() {
 <script setup>
 import { ref } from 'vue'
 import { useCaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
 
 const { code, generate, validate, reset } = useCaptcha({
   charsPreset: 'numeric',

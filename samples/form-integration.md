@@ -46,6 +46,7 @@ function submitForm() {
 <script setup>
 import { reactive, ref } from 'vue'
 import { VueClientRecaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
 
 const form = reactive({
   email: '',

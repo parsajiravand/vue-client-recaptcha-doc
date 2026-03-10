@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Playground
       link: /playground/
+    - theme: alt
+      text: Try Online
+      link: https://codesandbox.io/p/sandbox/4n9zxc
 
 features:
   - icon: 🎨
@@ -51,6 +54,7 @@ yarn add vue-client-recaptcha
 <script setup>
 import { ref } from 'vue'
 import { VueClientRecaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
 
 const inputValue = ref('')
 const isValid = ref(false)
