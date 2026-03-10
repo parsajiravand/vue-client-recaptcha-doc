@@ -27,8 +27,8 @@ const a11yInput = ref("");
 const a11yValid = ref(false);
 
 // Custom icon example
-const iconInput = ref("");
-const iconValid = ref(false);
+const customIconInput = ref("");
+const customIconValid = ref(false);
 
 // Audio example
 const audioInput = ref("");
@@ -37,6 +37,10 @@ const audioValid = ref(false);
 // Simple mode example
 const simpleInput = ref("");
 const simpleValid = ref(false);
+
+// CSS variables example
+const cssVarsInput = ref("");
+const cssVarsValid = ref(false);
 
 // Form integration example
 const form = reactive({
@@ -82,6 +86,26 @@ const checkValidCaptcha = (valid: boolean) => console.log("Valid:", valid);
       />
       <p class="status" :class="{ valid: isValid }">{{ isValid ? '✓ Valid' : 'Enter captcha' }}</p>
       <button @click="captchaRef?.resetCaptcha?.()">Reset</button>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;input v-model="inputValue" placeholder="Enter captcha" /&gt;
+  &lt;VueClientRecaptcha
+    ref="captchaRef"
+    v-model="inputValue"
+    v-model:valid="isValid"
+    @getCode="getCaptchaCode"
+    @isValid="checkValidCaptcha"
+  /&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+const inputValue = ref('')
+const isValid = ref(false)
+const captchaRef = ref(null)
+&lt;/script&gt;</code></pre>
+      </details>
     </section>
 
     <!-- Chars presets -->
@@ -97,6 +121,18 @@ const checkValidCaptcha = (valid: boolean) => console.log("Valid:", valid);
       />
       <p class="status" :class="{ valid: presetValid }">{{ presetValid ? '✓ Valid (numeric)' : 'Enter 4-digit code' }}</p>
       <button @click="presetCaptchaRef?.resetCaptcha?.()">Reset</button>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;VueClientRecaptcha
+    v-model="inputValue"
+    v-model:valid="isValid"
+    chars-preset="numeric"
+    :count="4"
+  /&gt;
+&lt;/template&gt;</code></pre>
+      </details>
     </section>
 
     <!-- Theming -->
@@ -114,6 +150,21 @@ const checkValidCaptcha = (valid: boolean) => console.log("Valid:", valid);
         :theme="currentTheme"
       />
       <p class="status" :class="{ valid: themeValid }">Theme: {{ currentTheme }}</p>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;VueClientRecaptcha
+    v-model="inputValue"
+    v-model:valid="isValid"
+    :theme="currentTheme"
+  /&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+const currentTheme = ref('light') // 'light' | 'dark' | 'auto'
+&lt;/script&gt;</code></pre>
+      </details>
     </section>
 
     <!-- Distortion options -->
@@ -134,6 +185,25 @@ const checkValidCaptcha = (valid: boolean) => console.log("Valid:", valid);
         :noise-lines="distortionType === 'lines' || distortionType === 'both' ? 3 : -1"
       />
       <p class="status" :class="{ valid: distortionValid }">Distortion: {{ distortionType }}</p>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;VueClientRecaptcha
+    v-model="inputValue"
+    v-model:valid="isValid"
+    :distortion="distortionType"
+    :noise-dots="noiseDots"
+    :noise-lines="noiseLines"
+  /&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+const distortionType = ref('both') // 'none' | 'lines' | 'dots' | 'both'
+const noiseDots = ref(15)
+const noiseLines = ref(3)
+&lt;/script&gt;</code></pre>
+      </details>
     </section>
 
     <!-- Accessibility -->
@@ -148,18 +218,42 @@ const checkValidCaptcha = (valid: boolean) => console.log("Valid:", valid);
         :audio-enabled="true"
       />
       <p class="status" :class="{ valid: a11yValid }">Accessible with custom labels & audio</p>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;VueClientRecaptcha
+    v-model="inputValue"
+    v-model:valid="isValid"
+    refresh-label="Refresh the captcha code"
+    canvas-label="Visual captcha code"
+    :audio-enabled="true"
+  /&gt;
+&lt;/template&gt;</code></pre>
+      </details>
     </section>
 
     <!-- Custom icon -->
     <section class="example">
       <h2>6. Custom Icon Slot</h2>
-      <input v-model="iconInput" placeholder="Enter captcha" />
-      <VueClientRecaptcha v-model="iconInput" v-model:valid="iconValid">
+      <input v-model="customIconInput" placeholder="Enter captcha" />
+      <VueClientRecaptcha v-model="customIconInput" v-model:valid="customIconValid">
         <template #icon>
           <span style="color: blue; font-weight: bold; cursor: pointer">↻ Custom</span>
         </template>
       </VueClientRecaptcha>
-      <p class="status" :class="{ valid: iconValid }">Custom refresh icon</p>
+      <p class="status" :class="{ valid: customIconValid }">Custom refresh icon</p>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;VueClientRecaptcha v-model="inputValue" v-model:valid="isValid"&gt;
+    &lt;template #icon&gt;
+      &lt;span style="color: blue; font-weight: bold; cursor: pointer"&gt;↻ Custom&lt;/span&gt;
+    &lt;/template&gt;
+  &lt;/VueClientRecaptcha&gt;
+&lt;/template&gt;</code></pre>
+      </details>
     </section>
 
     <!-- Audio enabled -->
@@ -172,6 +266,17 @@ const checkValidCaptcha = (valid: boolean) => console.log("Valid:", valid);
         :audio-enabled="true"
       />
       <p class="status" :class="{ valid: audioValid }">Audio enabled (click refresh to hear)</p>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;VueClientRecaptcha
+    v-model="inputValue"
+    v-model:valid="isValid"
+    :audio-enabled="true"
+  /&gt;
+&lt;/template&gt;</code></pre>
+      </details>
     </section>
 
     <!-- Form integration -->
@@ -189,6 +294,40 @@ const checkValidCaptcha = (valid: boolean) => console.log("Valid:", valid);
         />
         <button type="submit" :disabled="!formValid">Submit Form</button>
       </form>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;form @submit.prevent="submitForm"&gt;
+    &lt;input v-model="form.email" type="email" required /&gt;
+    &lt;input v-model="form.password" type="password" required /&gt;
+    &lt;VueClientRecaptcha
+      ref="captchaRef"
+      v-model="form.captcha"
+      v-model:valid="formValid"
+      chars-preset="numeric"
+      :count="3"
+    /&gt;
+    &lt;button type="submit" :disabled="!formValid"&gt;Submit&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+const form = reactive({
+  email: '',
+  password: '',
+  captcha: ''
+})
+const formValid = ref(false)
+const captchaRef = ref(null)
+
+const submitForm = () => {
+  if (!formValid.value) return
+  // Handle form submission
+  captchaRef.value?.resetCaptcha()
+}
+&lt;/script&gt;</code></pre>
+      </details>
     </section>
 
     <!-- Simple mode -->
@@ -202,22 +341,54 @@ const checkValidCaptcha = (valid: boolean) => console.log("Valid:", valid);
         :count="6"
       />
       <p class="status" :class="{ valid: simpleValid }">Clean, straight-line text (adapts to theme)</p>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;template&gt;
+  &lt;VueClientRecaptcha
+    v-model="inputValue"
+    v-model:valid="isValid"
+    :simple-mode="true"
+    :count="6"
+  /&gt;
+&lt;/template&gt;</code></pre>
+      </details>
     </section>
 
     <!-- CSS Variables demo -->
     <section class="example">
       <h2>10. CSS Variables (Theming)</h2>
-      <input v-model="iconInput" placeholder="Enter captcha" />
+      <input v-model="cssVarsInput" placeholder="Enter captcha" />
       <VueClientRecaptcha
-        v-model="iconInput"
-        v-model:valid="iconValid"
+        v-model="cssVarsInput"
+        v-model:valid="cssVarsValid"
         class="custom-themed"
       >
         <template #icon>
           <span style="color: var(--vcr-icon-color); font-weight: bold">↻ Themed</span>
         </template>
       </VueClientRecaptcha>
-      <p class="status" :class="{ valid: iconValid }">Custom CSS variables applied</p>
+      <p class="status" :class="{ valid: cssVarsValid }">Custom CSS variables applied</p>
+
+      <details class="code-toggle">
+        <summary>View Code</summary>
+        <pre><code>&lt;style&gt;
+.custom-themed {
+  --vcr-bg: #f0f8ff;
+  --vcr-icon-color: #ff6b35;
+  --vcr-radius: 12px;
+  --vcr-padding: 14px;
+}
+&lt;/style&gt;
+
+&lt;template&gt;
+  &lt;VueClientRecaptcha v-model="inputValue" class="custom-themed"&gt;
+    &lt;template #icon&gt;
+      &lt;span style="color: var(--vcr-icon-color)"&gt;↻ Themed&lt;/span&gt;
+    &lt;/template&gt;
+  &lt;/VueClientRecaptcha&gt;
+&lt;/template&gt;</code></pre>
+      </details>
     </section>
   </div>
 </template>
@@ -343,5 +514,39 @@ button:disabled {
   --vcr-icon-color: #ff6b35;
   --vcr-radius: 12px;
   --vcr-padding: 14px;
+}
+
+.code-toggle {
+  margin-top: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+
+.code-toggle summary {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+}
+
+.code-toggle summary:hover {
+  background: #f0f0f0;
+}
+
+.code-toggle pre {
+  margin: 0;
+  padding: 12px;
+  background: #2d3748;
+  color: #e2e8f0;
+  border-radius: 0 0 6px 6px;
+  overflow-x: auto;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.code-toggle code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  white-space: pre;
 }
 </style>
