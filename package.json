@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.0",
+    "vue-client-recaptcha": "^2.0.0"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0"
+  }
+}

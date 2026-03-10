@@ -1,0 +1,129 @@
+/* Demo container styles for captcha examples */
+.vp-doc .demo-container {
+  padding: 1.5rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  margin: 1rem 0;
+}
+
+.vp-doc .demo-container input[type="text"],
+.vp-doc .demo-container input[type="email"],
+.vp-doc .demo-container input[type="password"] {
+  padding: 8px 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  margin: 8px 8px 8px 0;
+  min-width: 200px;
+}
+
+.vp-doc .demo-container button {
+  margin: 8px 8px 8px 0;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid var(--vp-button-brand-border);
+  border-radius: 4px;
+  background: var(--vp-button-brand-bg);
+  color: var(--vp-button-brand-text);
+}
+
+.vp-doc .demo-container button:hover {
+  opacity: 0.9;
+}
+
+.vp-doc .demo-container .status {
+  display: inline-block;
+  margin: 8px 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.vp-doc .demo-container .status.valid {
+  background: var(--vp-c-green-soft);
+  color: var(--vp-c-green-1);
+}
+
+.vp-doc .demo-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+}
+
+.vp-doc .demo-container .message.success {
+  background: var(--vp-c-green-soft);
+  color: var(--vp-c-green-1);
+}
+
+.vp-doc .demo-container .message.error {
+  background: var(--vp-c-red-soft);
+  color: var(--vp-c-red-1);
+}
+
+.vp-doc .demo-container .custom-themed {
+  --vcr-bg: #f0f8ff;
+  --vcr-icon-color: #ff6b35;
+  --vcr-radius: 12px;
+  --vcr-padding: 14px;
+}
+
+.vp-doc .playground {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.vp-doc .playground-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+}
+
+.vp-doc .control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vp-doc .control-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.vp-doc .control-group select,
+.vp-doc .control-group input[type="number"] {
+  padding: 6px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  min-width: 120px;
+}
+
+.vp-doc .control-group input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.vp-doc .playground-demo {
+  padding: 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+input {
+  padding: 8px 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  min-width: 200px;
+  background-color: var(--vp-c-bg-soft);
+}
+
+/*
+ * vue-client-recaptcha
+ * Creator:parsajiravand
+ * Build simple recaptcha for vuejs without need server
+ * v2.0.0
+ * MIT License
+ */
+
+ .vue_client_recaptcha{--vcr-bg: #eee;--vcr-text: inherit;--vcr-line: rgba(0, 0, 0, .3);--vcr-font: bold 28px sans-serif;--vcr-radius: 0;--vcr-padding: 10px;--vcr-icon-color: #333333;position:relative;display:flex;justify-content:center;flex-direction:row;direction:ltr;background-color:var(--vcr-bg)}.vue_client_recaptcha_theme_dark{--vcr-bg: #333;--vcr-icon-color: #eee}.vue_client_recaptcha_theme_auto{--vcr-bg: #eee;--vcr-icon-color: #333333}@media(prefers-color-scheme:dark){.vue_client_recaptcha_theme_auto{--vcr-bg: #333;--vcr-icon-color: #eee}}.vue_client_recaptcha_icon{color:var(--vcr-icon-color);text-align:center;padding:var(--vcr-padding);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background-color .3s ease-in-out}.vue_client_recaptcha .captcha_canvas{padding:var(--vcr-padding) 0;margin-left:var(--vcr-padding)}.vue_client_recaptcha_icon_svg path{fill:var(--vcr-icon-color)}.vue_client_recaptcha_sr_only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
