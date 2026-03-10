@@ -26,6 +26,15 @@ const cssValid = ref(false)
 The `custom-themed` class is defined in the theme and sets: `--vcr-bg`, `--vcr-icon-color`, `--vcr-radius`, `--vcr-padding`.
 
 ```vue
+<script setup>
+import { ref } from 'vue'
+import { VueClientRecaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
+
+const input = ref('')
+const valid = ref(false)
+</script>
+
 <template>
   <VueClientRecaptcha v-model="input" v-model:valid="valid" class="custom-themed">
     <template #icon>

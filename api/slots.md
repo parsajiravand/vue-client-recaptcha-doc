@@ -12,11 +12,22 @@ Custom template for the refresh button. Use your own icon component, SVG, or pla
 ### Custom icon or text
 
 ```vue
-<VueClientRecaptcha v-model="input" v-model:valid="valid">
-  <template #icon>
-    <span style="font-weight: bold">↻ Refresh</span>
-  </template>
-</VueClientRecaptcha>
+<script setup>
+import { ref } from 'vue'
+import { VueClientRecaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
+
+const input = ref('')
+const valid = ref(false)
+</script>
+
+<template>
+  <VueClientRecaptcha v-model="input" v-model:valid="valid">
+    <template #icon>
+      <span style="font-weight: bold">↻ Refresh</span>
+    </template>
+  </VueClientRecaptcha>
+</template>
 ```
 
 ### Custom SVG

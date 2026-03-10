@@ -24,17 +24,26 @@ Ensure Vue 3.2 or higher is installed in your project.
 
 ## Basic Usage
 
-### 1. Import the component
+### 1. Import the component and styles
 
 ```vue
 <script setup>
 import { ref } from 'vue'
 import { VueClientRecaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
 
 const inputValue = ref('')
 const isValid = ref(false)
 </script>
 ```
+
+::: tip CSS import required
+The package requires its styles. Add this import in your main entry (e.g. `main.js` or `main.ts`) or in your root component:
+
+```js
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
+```
+:::
 
 ### 2. Use in template
 
@@ -64,6 +73,7 @@ Use a template ref to call `resetCaptcha()` when the user needs a new code:
 <script setup>
 import { ref } from 'vue'
 import { VueClientRecaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
 
 const inputValue = ref('')
 const isValid = ref(false)
@@ -85,4 +95,4 @@ const captchaRef = ref(null)
 
 - Explore [Props](/api/props) and [Events](/api/events) for full customization
 - Check out [Samples](/samples/) for real-world examples
-- Try the [Playground](/playground/) to experiment interactively
+- Try the [Playground](/playground/) or [CodeSandbox](https://codesandbox.io/p/sandbox/4n9zxc) to experiment online

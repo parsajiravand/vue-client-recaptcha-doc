@@ -2,6 +2,10 @@
 
 Full reference for `VueClientRecaptcha` component props.
 
+::: tip CSS import
+Import the package styles: `import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'`
+:::
+
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `modelValue` | `string \| null` | `""` | User input to validate (use with v-model) |

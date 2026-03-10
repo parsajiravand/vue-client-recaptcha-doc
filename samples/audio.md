@@ -23,6 +23,7 @@ const audioValid = ref(false)
 <script setup>
 import { ref } from 'vue'
 import { VueClientRecaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
 
 const audioInput = ref('')
 const audioValid = ref(false)

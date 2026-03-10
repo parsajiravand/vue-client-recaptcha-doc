@@ -2,6 +2,20 @@
 
 Interactive playground to experiment with `VueClientRecaptcha` options.
 
+## Online Playground
+
+Try it in your browser with [CodeSandbox](https://codesandbox.io/p/sandbox/4n9zxc):
+
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/4n9zxc)
+
+The sandbox includes the CSS import: `import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'`
+
+---
+
+## Inline Playground
+
+Below you can experiment with options locally:
+
 <script setup>
 import { ref, computed } from 'vue'
 

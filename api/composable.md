@@ -8,6 +8,8 @@ Composable for captcha code generation and validation. Use with `VueClientRecapt
 import { useCaptcha } from 'vue-client-recaptcha'
 ```
 
+When using the component, also import: `import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'`
+
 ## API
 
 ```ts

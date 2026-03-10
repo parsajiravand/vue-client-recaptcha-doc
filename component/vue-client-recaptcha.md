@@ -12,6 +12,7 @@ Canvas-based captcha component for Vue 3. Renders a random code with optional di
 <script setup>
 import { ref } from 'vue'
 import { VueClientRecaptcha } from 'vue-client-recaptcha'
+import 'vue-client-recaptcha/dist/vue-client-recaptcha.css'
 
 const input = ref('')
 const valid = ref(false)
